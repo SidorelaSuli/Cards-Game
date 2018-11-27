@@ -19,21 +19,17 @@ if (a>b){
 }
 
 // Shuffle the cards. Takes all the cards and card array size.
-void shuffle ( struct Card cards[], int number )
-{
+void shuffle ( struct Card cards[], int number ){
     srand ( time(NULL) );
 
     int i;
-    for (i = number-1; i > 0; i--)   //number-1 because its in array.
-    {
-
+    for (i = number-1; i > 0; i--){  //number-1 because its in array.
         // Take a random index.
         int j = rand() % (i+1);
         // Swap cards
         struct Card temp = cards[i];
         cards[i] = cards[j];
         cards[j] = temp;
-
     }
 }
 
@@ -93,8 +89,7 @@ bool isFull(struct Card cards[], int n){
 
 }
 
-int main()
-{
+int main(){
     bool answer = true;
     while (answer == true){
     struct Card cards[52];  // The deck (from 0 to and 51)
